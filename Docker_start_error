@@ -1,0 +1,28 @@
+//Below is the error or crash report you might when you first start your Docker in windows 10 or so. This error is occurring in the general setting 
+"Use the WSL 2 based engine" might be ticket which is for "WSL 2 provides better performance than the legacy Hyper-V backend, 
+for more info - https://docs.docker.com/docker-for-windows/wsl/"
+you just need to untick that option and let the Docker run on Hyper-V backend. Restart the docker and it would start running.
+
+System.InvalidOperationException:
+Failed to set version to docker-desktop: exit code: -1
+ stdout: The attempted operation is not supported for the type of object referenced.
+
+
+ stderr: 
+   at Docker.ApiServices.WSL2.WslShortLivedCommandResult.LogAndThrowIfUnexpectedExitCode(String prefix, ILogger log, Int32 expectedExitCode) in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.ApiServices\WSL2\WslCommand.cs:line 146
+   at Docker.Engines.WSL2.WSL2Provisioning.<ProvisionAsync>d__8.MoveNext() in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.Desktop\Engines\WSL2\WSL2Provisioning.cs:line 82
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.Engines.WSL2.LinuxWSL2Engine.<DoStartAsync>d__26.MoveNext() in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.Desktop\Engines\WSL2\LinuxWSL2Engine.cs:line 104
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.ApiServices.StateMachines.TaskExtensions.<WrapAsyncInCancellationException>d__0.MoveNext() in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\TaskExtensions.cs:line 29
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Docker.ApiServices.StateMachines.StartTransition.<DoRunAsync>d__5.MoveNext() in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\StartTransition.cs:line 67
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Docker.ApiServices.StateMachines.StartTransition.<DoRunAsync>d__5.MoveNext() in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.ApiServices\StateMachines\StartTransition.cs:line 92
