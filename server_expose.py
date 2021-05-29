@@ -1,4 +1,5 @@
 echo 'from flask import Flask
+ 
 
 app = Flask(__name__)
 
@@ -32,3 +33,4 @@ Requirement already satisfied: MarkupSafe>=0.23 in /usr/local/lib/python3.6/site
 
 $ python3 app.py                                             
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)   //5000 is the Default port for Flask
+ * Exposing Flash app to the own port
