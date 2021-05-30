@@ -7,6 +7,7 @@ System.InvalidOperationException:
 Failed to set version to docker-desktop: exit code: -1
  stdout: The attempted operation is not supported for the type of object referenced.
 
+//this is the error message while starting up the docker engine
 
  stderr: 
    at Docker.ApiServices.WSL2.WslShortLivedCommandResult.LogAndThrowIfUnexpectedExitCode(String prefix, ILogger log, Int32 expectedExitCode) in C:\workspaces\PR-15387\src\github.com\docker\pinata\win\src\Docker.ApiServices\WSL2\WslCommand.cs:line 146
