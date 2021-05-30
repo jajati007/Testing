@@ -16,4 +16,5 @@ for job_elem in job_elems:
     print(company_elem.text)
     print(location_elem.text)
     print()
-    
+
+#this would do the job search in given url    
