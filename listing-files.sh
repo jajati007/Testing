@@ -9,3 +9,4 @@ echo "script execution has been done!"
 
 #Set this script in Cron for specific time.
 #This is to test GIT SCM
+#Git integration - tests
